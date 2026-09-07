@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react'
 
 const EVENT_DATE = new Date('2026-10-10T22:00:00-03:00')
+const HERO_DESKTOP = 'https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/hero-desktop.webp'
+const HERO_MOBILE = 'https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/hero-mobile.webp'
+const VINYL_IMAGE = 'https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/vinil.webp'
+const HEADPHONES_IMAGE = 'https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/headphones.webp'
 
 function CalendarIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v3M17 2v3M3.5 9h17M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2Z" /></svg>
@@ -20,17 +24,6 @@ function DressIcon() {
 
 function LockIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg>
-}
-
-function HeadphonesArt() {
-  return (
-    <svg className="headphones-art" viewBox="0 0 300 300" aria-hidden="true">
-      <path d="M55 170v-25a95 95 0 0 1 190 0v25" />
-      <rect x="35" y="155" width="55" height="95" rx="25" />
-      <rect x="210" y="155" width="55" height="95" rx="25" />
-      <path d="M90 210c16 19 35 29 60 29s44-10 60-29" />
-    </svg>
-  )
 }
 
 function getCountdown() {
@@ -109,7 +102,10 @@ export default function App() {
       </header>
 
       <section className="hero" id="inicio">
-        <img className="hero-image" src="/assets/hero-white-party.webp" alt="Mulher vestida de branco em uma festa elegante" fetchPriority="high" />
+        <picture>
+          <source media="(max-width: 700px)" srcSet={HERO_MOBILE} />
+          <img className="hero-image" src={HERO_DESKTOP} alt="Mulher vestida de branco em uma festa elegante" fetchPriority="high" />
+        </picture>
         <div className="hero-wash" aria-hidden="true" />
 
         <div className="hero-copy">
@@ -132,7 +128,7 @@ export default function App() {
       </section>
 
       <section className="about" id="evento">
-        <div className="vinyl" aria-hidden="true">
+        <div className="vinyl real-vinyl" style={{ backgroundImage: `url(${VINYL_IMAGE})` }} aria-hidden="true">
           <span>UMA VIAGEM<br />NO TEMPO<br />ATRAVÉS DA<br />MÚSICA</span>
         </div>
 
@@ -145,7 +141,7 @@ export default function App() {
         </div>
 
         <div className="headphones-wrap" aria-hidden="true">
-          <HeadphonesArt />
+          <img className="headphones-image" src={HEADPHONES_IMAGE} alt="" loading="lazy" />
           <span>Music<br />Never<br />Ends</span>
         </div>
       </section>
