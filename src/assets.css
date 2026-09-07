@@ -3,6 +3,9 @@
 /* Ajustes da seção logo abaixo do hero */
 .about{background:#fff!important;border-bottom:0!important;padding:34px clamp(70px,9vw,150px)!important;grid-template-columns:minmax(170px,220px) minmax(420px,680px) minmax(160px,220px)!important;justify-content:center!important;column-gap:42px!important;min-height:285px!important}.about-copy{padding:24px 8px!important}.vinyl{margin-left:0!important;justify-self:center!important;width:min(20vw,220px)!important}.headphones-wrap{justify-self:center!important;width:100%!important}.about-copy h2{font-size:clamp(32px,3.4vw,49px)!important}.about-copy p{max-width:660px;margin-left:auto;margin-right:auto}
 
+/* Todo fundo claro do site fica branco puro */
+html,body,main{background:#fff!important}.about,.details-strip,.sponsors,.gallery,.bottom-info,.section{background:#fff!important}.sponsor-slot{background:#fff!important}.producer{background:#fff!important}.info-column{background:#fff!important}.gallery{background:#fff!important}.pending-contact{background:#fff!important;border:1px solid #e5e5e5}.section-title.lines>span{background:#d9d9d9!important}
+
 @media(max-width:1000px){.about{padding:34px 42px!important;grid-template-columns:180px minmax(0,1fr) 170px!important;column-gap:24px!important}.vinyl{width:175px!important}.headphones-image{width:175px!important}}
 
 @media(max-width:700px){.hero-image{object-position:center top!important}.about{padding:42px 22px!important;grid-template-columns:1fr!important;background:#fff!important}.real-vinyl{width:170px!important;margin:0 auto!important}.about-copy{padding:10px 0!important;text-align:center!important}.headphones-image{width:185px!important}.headphones-wrap{min-height:175px!important}.about-copy h2{font-size:36px!important}.about-copy p{font-size:14px!important}}
