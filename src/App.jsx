@@ -5,6 +5,33 @@ const HERO_DESKTOP = 'https://catanduvasemfoco.com.br/wp-content/uploads/2026/09
 const HERO_MOBILE = 'https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/hero-mobile.webp'
 const VINYL_IMAGE = 'https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/vinil.webp'
 const HEADPHONES_IMAGE = 'https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/headphones.webp'
+const ESTUDIO_11_LOGO = 'https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/logo-estudio-11.webp'
+
+const sponsors = [
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/bodega-conveniencia.webp', 'Bodega Conveniência'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/sicredi-logo.webp', 'Sicredi'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/sicoob-logo-1.webp', 'Sicoob'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/orssatto-telecom.webp', 'Orssatto Telecom'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/logo-cresol-02.webp', 'Cresol'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/taxa.webp', 'Taxa'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/ultra-descontao-1.webp', 'Ultra Descontão'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/bernart-planejamentos.webp', 'Bernart Planejamentos'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/loja-vips.webp', 'Loja Vips'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/OTICA-GOLD.webp', 'Ótica Gold'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/clinica-ESPACO-SAUDE-IMAGEM.webp', 'Clínica Espaço Saúde Imagem'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/festa-e-cia.webp', 'Festa e Cia'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/zancanaro-e-grobs.webp', 'Zancanaro e Grobs'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/a-cantina.webp', 'A Cantina'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/MEGA-BEER-novo2.webp', 'Mega Beer'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/sindicato-rural.webp', 'Sindicato Rural'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/gsantin.webp', 'G Santin'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/jenas-e-cia.webp', 'Jenas e Cia'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/nc.webp', 'NC'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/madevan.webp', 'Madevan'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/arena-sene.webp', 'Arena Sene'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/mramos-producoes.webp', 'M Ramos Produções'],
+  ['https://catanduvasemfoco.com.br/wp-content/uploads/2026/09/LOGO-ESTUDIO-MIDIA20260807-155701.webp', 'Estúdio Mídia'],
+]
 
 function CalendarIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v3M17 2v3M3.5 9h17M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2Z" /></svg>
@@ -63,10 +90,13 @@ function Countdown() {
 
 function SponsorSpace() {
   return (
-    <div className="sponsor-grid" aria-label="Área preparada para 24 patrocinadores">
-      {Array.from({ length: 24 }, (_, index) => (
-        <div className="sponsor-slot" key={index} aria-hidden="true" />
+    <div className="sponsor-grid" aria-label="Patrocinadores da White Party 6">
+      {sponsors.map(([src, alt]) => (
+        <div className="sponsor-slot sponsor-logo-card" key={src}>
+          <img src={src} alt={alt} loading="lazy" decoding="async" />
+        </div>
       ))}
+      <div className="sponsor-slot sponsor-logo-card sponsor-empty" aria-hidden="true" />
     </div>
   )
 }
@@ -204,7 +234,7 @@ export default function App() {
 
         <div className="producer">
           <span className="eyebrow">REALIZAÇÃO</span>
-          <div className="studio-logo"><span>Estúdio</span><b>11</b></div>
+          <img className="producer-logo" src={ESTUDIO_11_LOGO} alt="Estúdio 11" loading="lazy" decoding="async" />
           <small>White Party 6</small>
         </div>
       </section>
